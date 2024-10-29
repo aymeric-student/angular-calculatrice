@@ -5,6 +5,7 @@
   "projects": {
     "angular-calculatrice": {
       "projectType": "application",
+
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
@@ -34,15 +35,22 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "javascript-natural-sort",
+              "tiny-emitter",
+              "escape-latex",
+              "seedrandom",
+              "typed-function"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",

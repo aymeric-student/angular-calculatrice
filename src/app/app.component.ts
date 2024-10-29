@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {NgForOf} from '@angular/common';
+import { evaluate } from 'mathjs';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,7 @@ export class AppComponent {
 
   calculate() {
     try {
-      this.display = eval(this.display);
+      this.display = evaluate(this.display).toString();
     } catch (e) {
       this.display = 'Error';
     }
